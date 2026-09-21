@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="歌谱大全提供海量高清正版钢琴谱、吉他谱、简谱、五线谱下载与在线试听。涵盖流行、古典、民谣、动漫等曲风，支持PDF格式，助您轻松演奏。">
+    <meta name="keywords" content="歌谱大全,钢琴谱,吉他谱,简谱,五线谱,曲谱下载,在线试听">
+    <title>歌谱大全-海量正版曲谱下载与在线试听平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f1f3f5;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 200px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            border-radius: 15px;
+            padding: 5px 15px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .category-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 12px;
+        }
+
+        .view-all {
+            color: var(--accent-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layout */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        /* Song Card */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .music-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .card:hover .music-icon {
+            opacity: 1;
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .badge {
+            background: #f1f3f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #495057;
+        }
+
+        .card-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px 0;
+            border-radius: 4px;
+            font-size: 13px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #dee2e6;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1a252f;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: var(--accent-color);
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Download Guide Section */
+        .guide-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+            border: 1px solid #eee;
+        }
+
+        .guide-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .step-num {
+            font-size: 40px;
+            font-weight: 800;
+            color: #f1f3f5;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .step h4 {
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                height: auto;
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                display: none; /* Simplified for mobile, normally would be a hamburger menu */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+            歌谱<span>大全</span>
+        </a>
+        <nav class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">钢琴谱</a>
+            <a href="#">吉他谱</a>
+            <a href="#">简谱</a>
+            <a href="#">五线谱</a>
+            <a href="#">曲库搜索</a>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="搜索歌曲名、歌手...">
+            <button>搜索</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>海量正版曲谱，轻松演奏梦想</h1>
+        <p>收录超过 50,000+ 首钢琴谱、吉他谱、简谱及五线谱，高清无损格式，助您随时随地享受音乐。</p>
+        <div class="category-tags">
+            <div class="tag">热门：梦中的婚礼</div>
+            <div class="tag">流行：周杰伦</div>
+            <div class="tag">古典：致爱丽丝</div>
+            <div class="tag">动漫：千本樱</div>
+            <div class="tag">民谣：成都</div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-item">
+                <div class="feature-icon">🎵</div>
+                <h3>海量曲库</h3>
+                <p>涵盖流行、古典、动漫、民谣等各类风格，满足不同乐手需求。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📄</div>
+                <h3>高清格式</h3>
+                <p>提供PDF、MIDI等多种格式下载，打印清晰，适合专业演奏。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎧</div>
+                <h3>在线试听</h3>
+                <p>部分曲谱附带标准音高试听，帮助您快速掌握旋律与节奏。</p>
+            </div>
+        </section>
+
+        <!-- Popular Piano Scores -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">热门钢琴谱</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-layout">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/piano1/400/300" alt="梦中的婚礼">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">梦中的婚礼</h3>
+                        <div class="card-meta">
+                            <span class="badge">古典</span>
+                            <span>难度: 中级</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/piano2/400/300" alt="River Flows in You">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">River Flows in You</h3>
+                        <div class="card-meta">
+                            <span class="badge">流行</span>
+                            <span>难度: 入门</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/piano3/400/300" alt="克罗地亚狂想曲">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">克罗地亚狂想曲</h3>
+                        <div class="card-meta">
+                            <span class="badge">轻音乐</span>
+                            <span>难度: 中级</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/piano4/400/300" alt="菊次郎的夏天">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">菊次郎的夏天</h3>
+                        <div class="card-meta">
+                            <span class="badge">影视</span>
+                            <span>难度: 入门</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guitar Scores -->
+        <section style="margin-top: 60px;">
+            <div class="section-header">
+                <h2 class="section-title">流行吉他谱</h2>
+                <a href="#" class="view-all">查看全部 &rarr;</a>
+            </div>
+            <div class="grid-layout">
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/guitar1/400/300" alt="晴天">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">晴天 - 周杰伦</h3>
+                        <div class="card-meta">
+                            <span class="badge">木吉他</span>
+                            <span>难度: 中级</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/guitar2/400/300" alt="平凡之路">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">平凡之路 - 朴树</h3>
+                        <div class="card-meta">
+                            <span class="badge">木吉他</span>
+                            <span>难度: 入门</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/guitar3/400/300" alt="加州旅馆">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Hotel California</h3>
+                        <div class="card-meta">
+                            <span class="badge">指弹</span>
+                            <span>难度: 高级</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/guitar4/400/300" alt="海阔天空">
+                        <div class="music-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">海阔天空 - Beyond</h3>
+                        <div class="card-meta">
+                            <span class="badge">木吉他</span>
+                            <span>难度: 中级</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-outline">试听</button>
+                            <button class="btn btn-primary">下载PDF</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section class="guide-section">
+            <div class="section-header">
+                <h2 class="section-title">如何下载与使用歌谱</h2>
+            </div>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>搜索曲谱</h4>
+                    <p>在首页搜索框输入歌曲名称、歌手或简谱特征，快速定位您需要的乐谱。</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>选择格式</h4>
+                    <p>根据您的乐器和需求选择对应的格式（如PDF钢琴谱、TXT简谱等），点击下载按钮即可获取。</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>安装与打印</h4>
+                    <p>下载的PDF文件可直接使用Adobe Acrobat Reader等软件打开，连接打印机即可打印出高质量的纸质乐谱。</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">
+            <h2>歌谱大全</h2>
+            <p>致力于为音乐爱好者提供最全面、最专业的曲谱资源平台。无论您是初学者还是专业演奏者，这里都有您需要的音乐灵感。</p>
+        </div>
+        <div class="footer-col">
+            <h4>曲谱分类</h4>
+            <ul>
+                <li><a href="#">钢琴谱</a></li>
+                <li><a href="#">吉他谱</a></li>
+                <li><a href="#">简谱</a></li>
+                <li><a href="#">五线谱</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助中心</h4>
+            <ul>
+                <li><a href="#">下载指南</a></li>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">版权声明</a></li>
+                <li><a href="#">联系客服</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <ul>
+                <li><a href="#">网站介绍</a></li>
+                <li><a href="#">加入我们</a></li>
+                <li><a href="#">友情链接</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 歌谱大全版权所有. 本站所有资源仅供学习交流使用，请勿用于商业用途。</p>
+    </div>
+</footer>
+
+</body>
+                          </html>
