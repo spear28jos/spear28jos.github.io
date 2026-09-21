@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lol无限火力 - 玩家必备的无限乱斗模式全攻略与英雄推荐</title>
+    <meta name="description" content="本站提供英雄联盟无限火力模式的最新攻略、英雄推荐、符文搭配及热门出装，助你在无限乱斗中轻松五杀，享受无CD的战斗乐趣。">
+    <meta name="keywords" content="lol无限火力,英雄联盟无限乱斗,无限火力攻略,无限火力英雄,LOL符文,LOL出装">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a8ff;
+            --secondary-color: #fbc531;
+            --accent-color: #e84118;
+            --bg-dark: #1e272e;
+            --bg-card: #2f3640;
+            --text-main: #f5f6fa;
+            --text-sub: #dcdde1;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(30, 39, 46, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), #0097e6);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(30, 39, 46, 0.8), rgba(30, 39, 46, 0.9)), url('https://picsum.photos/seed/lolfire/1600/600') center/cover;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary-color);
+            text-shadow: 0 0 10px rgba(251, 197, 49, 0.4);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #3a4b5c;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            background-color: rgba(0, 168, 255, 0.15);
+            color: var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #7f8fa6;
+        }
+
+        /* Featured Hero Card */
+        .hero-card {
+            grid-column: span 1;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .hero-card {
+                grid-column: span 2;
+            }
+        }
+
+        .hero-card .card-img {
+            height: 240px;
+        }
+
+        .hero-card .card-title {
+            font-size: 1.5rem;
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .guide-item {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .guide-item:hover {
+            background-color: #3a4b5c;
+        }
+
+        .guide-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(251, 197, 49, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .guide-content {
+            flex: 1;
+        }
+
+        .guide-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .guide-content p {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #161a20;
+            padding: 60px 20px 20px;
+            border-top: 1px solid #2f3640;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2f3640;
+            color: #57606f;
+            font-size: 0.85rem;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        .badge-hot { background-color: rgba(232, 65, 24, 0.2); color: var(--accent-color); }
+        .badge-new { background-color: rgba(0, 168, 255, 0.2); color: var(--primary-color); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                🔥 <span>LOL无限火力</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#heroes">英雄推荐</a></li>
+                    <li><a href="#builds">符文出装</a></li>
+                    <li><a href="#strategy">战术指南</a></li>
+                </ul>
+            </nav>
+            <a href="#guide" class="cta-btn">开始乱斗</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>英雄联盟 <span class="highlight">无限火力</span> 攻略中心</h1>
+            <p>无技能冷却，极致的战斗快感。获取最新的英雄强度排行、实战出装思路以及无限乱斗专属符文搭配。</p>
+            <div style="margin-top: 24px;">
+                <a href="#heroes" class="cta-btn" style="padding: 12px 30px; font-size: 1rem;">查看T0英雄</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">全英雄攻略</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">符文适配</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">实时更新</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Featured Hero -->
+            <section id="heroes">
+                <div class="section-header">
+                    <div>
+                        <div class="section-subtitle">热门推荐</div>
+                        <h2 class="section-title">无限乱斗T0级英雄</h2>
+                    </div>
+                    <a href="#" style="color: var(--primary-color); font-weight: 500;">查看完整榜单 &rarr;</a>
+                </div>
+                
+                <div class="grid-3">
+                    <article class="card hero-card">
+                        <img src="https://picsum.photos/seed/lolrengar/800/400" alt="无极剑圣" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag badge-hot">强度最高</span>
+                            <h3 class="card-title">无极剑圣 - 机制怪</h3>
+                            <p class="card-desc">开启大招后的剑圣拥有无限续航和爆发，配合无尽之刃，在无限火力中能瞬间融化敌方后排。</p>
+                            <div class="card-meta">
+                                <span>定位：打野 / 上单</span>
+                                <span>胜率：58.4%</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/lolakali/400/300" alt="暗裔剑姬" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">高机动性</span>
+                            <h3 class="card-title">暗裔剑姬</h3>
+                            <p class="card-desc">Q技能的位移让她在团战中如入无人之境，被动技能的高额真实伤害让她在面对坦克时也游刃有余。</p>
+                            <div class="card-meta">
+                                <span>定位：上单</span>
+                                <span>推荐指数：⭐⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/lollucian/400/300" alt="伊泽瑞尔" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">快乐源泉</span>
+                            <h3 class="card-title">伊泽瑞尔</h3>
+                            <p class="card-desc">配合电刑符文，E技能的超远距离位移加上Q技能的快速施法，让他成为了无限火力中最快乐的上单。</p>
+                            <div class="card-meta">
+                                <span>定位：上单 / 中单</span>
+                                <span>推荐指数：⭐⭐⭐⭐</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Strategy & Builds -->
+            <section id="builds">
+                <div class="section-header">
+                    <div>
+                        <div class="section-subtitle">进阶指南</div>
+                        <h2 class="section-title">符文与出装详解</h2>
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <!-- Build Card 1 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">⚡ 电刑流</h3>
+                            <p class="card-desc">适合爆发型英雄，利用短CD技能快速触发电刑，打出瞬间爆发伤害。</p>
+                            <ul style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 15px;">
+                                <li>主系：精密 (征服者/电刑) + 灵光披风 + 超然</li>
+                                <li>副系：巫术 (风暴聚集) + 灵光披风</li>
+                                <li>属性：1攻击力 + 1自适应 + 1护甲</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Build Card 2 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">🛡️ 复苏流</h3>
+                            <p class="card-desc">针对无限火力中治疗和护盾被削弱的现状，复苏之风配合回血装备能让你站撸到底。</p>
+                            <ul style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 15px;">
+                                <li>主系：坚决 (复苏之风) + 过度生长 + 疾病</li>
+                                <li>副系：巫术 (迅捷) + 风暴聚集</li>
+                                <li>属性：1生命值 + 1自适应 + 1护甲</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Build Card 3 -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">💀 狂徒流</h3>
+                            <p class="card-desc">放弃伤害，堆叠生命值。依靠狂徒铠甲和血手，成为队友眼中的超级肉盾。</p>
+                            <ul style="font-size: 0.9rem; color: var(--text-sub); margin-bottom: 15px;">
+                                <li>核心装备：狂徒铠甲、反甲、血手</li>
+                                <li>符文：不灭之握 + 灵光披风</li>
+                                <li>玩法：全程平A，不死不回头</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: 500;">查看详情 &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy List -->
+            <section id="strategy">
+                <div class="section-header">
+                    <div>
+                        <div class="section-subtitle">实战技巧</div>
+                        <h2 class="section-title">无限火力通用战术</h2>
+                    </div>
+                </div>
+
+                <div class="guide-list">
+                    <a href="#" class="guide-item">
+                        <div class="guide-icon">⚔️</div>
+                        <div class="guide-content">
+                            <h3>利用CD优势打乱阵型</h3>
+                            <p>在无限火力中，不要执着于单挑。利用短CD的位移和控制技能，频繁进场打乱敌方阵型，配合队友集火。</p>
+                        </div>
+                    </a>
+                    <a href="#" class="guide-item">
+                        <div class="guide-icon">🏃</div>
+                        <div class="guide-content">
+                            <h3>灵活使用闪现技能</h3>
+                            <p>很多英雄的技能可以配合闪现使用（如：亚索EQ闪、死歌闪现E）。掌握这些技巧能让你在团战中进退自如。</p>
+                        </div>
+                    </a>
+                    <a href="#" class="guide-item">
+                        <div class="guide-icon">🧠</div>
+                        <div class="guide-content">
+                            <h3>控制兵线与野怪</h3>
+                            <p>无限火力中，兵线清理速度极快。合理利用野怪刷技能CD，可以保持高频率的技能输出，避免技能真空期。</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于本站</h4>
+                <p style="color: #7f8fa6; font-size: 0.9rem; line-height: 1.6;">
+                    本站致力于为英雄联盟玩家提供最及时、最准确的无限火力模式攻略。所有内容仅供学习参考，游戏版权归 Riot Games 所有。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">英雄排行</a></li>
+                    <li><a href="#">出装模拟器</a></li>
+                    <li><a href="#">符文搭配</a></li>
+                    <li><a href="#">新手教程</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">上单英雄</a></li>
+                    <li><a href="#">中单法师</a></li>
+                    <li><a href="#">打野刺客</a></li>
+                    <li><a href="#">射手ADC</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 LOL无限火力攻略网. All Rights Reserved. 此页面为演示设计，非Riot Games官方网站。
+        </div>
+    </footer>
+
+</body>
+  </html>
