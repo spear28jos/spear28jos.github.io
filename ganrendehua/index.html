@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感人的话语 - 情感共鸣与心灵治愈语录精选</title>
+    <meta name="description" content="本站收录了大量感人至深的话语、走心文案与情感语录，涵盖亲情、爱情、友情及自我激励，为您提供心灵的慰藉与共鸣。">
+    <meta name="keywords" content="感人的话语,情感语录,走心文案,心灵治愈,情感共鸣">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --primary-hover: #b02a6b;
+            --bg-color: #fdf6f9;
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-secondary: #6c757d;
+            --border-color: #e9ecef;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(214, 51, 132, 0.05) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            background-color: rgba(214, 51, 132, 0.1);
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cat-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .quote-card {
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: var(--radius);
+            position: relative;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .quote-card::before {
+            content: '“';
+            font-family: serif;
+            font-size: 5rem;
+            color: rgba(214, 51, 132, 0.1);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .quote-source {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        /* Usage Guide */
+        .guide-section {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .guide-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .guide-image {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 3rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-secondary);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-wrap: wrap;
+            }
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span>感动的</span>话语
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#categories">分类</a></li>
+                    <li><a href="#quotes">精选语录</a></li>
+                    <li><a href="#guide">使用指南</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>让心灵得到抚慰的<span style="color: var(--primary-color);">感人话语</span></h1>
+                <p>无论你正处于人生的低谷还是巅峰，这里都有直击内心的文字，为你提供情感共鸣与精神力量。</p>
+                <div class="hero-tags">
+                    <a href="#categories" class="tag">治愈系</a>
+                    <a href="#categories" class="tag">励志语录</a>
+                    <a href="#categories" class="tag">亲情友情</a>
+                    <a href="#categories" class="tag">情感散文</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories">
+            <div class="container">
+                <h2 class="section-title">分类浏览</h2>
+                <div class="cat-grid">
+                    <article class="cat-card">
+                        <span class="cat-icon">❤️</span>
+                        <h3 class="cat-title">爱情与告白</h3>
+                        <p class="cat-desc">表达爱意、表白心迹或挽回关系的感人话语，适合在特殊纪念日或浪漫时刻使用。</p>
+                    </article>
+                    <article class="cat-card">
+                        <span class="cat-icon">👨‍👩‍👧‍👦</span>
+                        <h3 class="cat-title">亲情与家庭</h3>
+                        <p class="cat-desc">关于父母恩情、家庭温暖和成长的感悟，让爱意不再羞于表达。</p>
+                    </article>
+                    <article class="cat-card">
+                        <span class="cat-icon">🤝</span>
+                        <h3 class="cat-title">友情与陪伴</h3>
+                        <p class="cat-desc">珍惜知己、感谢陪伴的真挚话语，适合朋友聚会、毕业季或赠言使用。</p>
+                    </article>
+                    <article class="cat-card">
+                        <span class="cat-icon">💪</span>
+                        <h3 class="cat-title">励志与成长</h3>
+                        <p class="cat-desc">在迷茫时给自己打气，在挫折中寻找希望的励志金句。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section id="quotes" class="quote-section">
+            <div class="container">
+                <h2 class="section-title">精选语录</h2>
+                <div class="quote-grid">
+                    <div class="quote-card">
+                        <p class="quote-text">“真正的爱，不是彼此凝视，而是共同注视着同一个方向。”</p>
+                        <div class="quote-author">安托万·德·圣-埃克苏佩里</div>
+                        <div class="quote-source">《小王子》</div>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">“父母在，人生尚有来处；父母去，人生只剩归途。”</p>
+                        <div class="quote-author">莫言</div>
+                        <div class="quote-source">经典语录</div>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">“生活总是让我们遍体鳞伤，但到后来，那些受伤的地方一定会变成我们最强壮的地方。”</p>
+                        <div class="quote-author">海明威</div>
+                        <div class="quote-source">《老人与海》</div>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">“在这个世界上，不是所有合理的和美好的都能按照自己的愿望存在或实现。”</p>
+                        <div class="quote-author">路遥</div>
+                        <div class="quote-source">《平凡的世界》</div>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">“陪伴是最长情的告白，守护是最沉默的陪伴。”</p>
+                        <div class="quote-author">佚名</div>
+                        <div class="quote-source">网络语录</div>
+                    </div>
+                    <div class="quote-card">
+                        <p class="quote-text">“即使再微弱的光，也能照亮前行的路；即使再微小的努力，也能汇聚成巨大的力量。”</p>
+                        <div class="quote-author">佚名</div>
+                        <div class="quote-source">励志语录</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usage Guide -->
+        <section id="guide" class="guide-section">
+            <div class="container">
+                <h2 class="section-title">如何使用这些话语</h2>
+                <div class="guide-container">
+                    <div class="guide-content">
+                        <h3>让文字成为情感的载体</h3>
+                        <p style="margin-bottom: 20px;">感人的话语不仅仅是文字的排列，更是情感的共鸣。在使用这些语录时，请结合您当下的心境与具体情境，才能真正触动人心。</p>
+                        <ul class="guide-list">
+                            <li><strong>写在卡片上：</strong> 手写的温度往往比电子文本更感人，适合送给亲友。</li>
+                            <li><strong>作为签名档：</strong> 在社交媒体或即时通讯软件中设置，展示个性与态度。</li>
+                            <li><strong>自我激励：</strong> 在感到疲惫或自我怀疑时，阅读这些话语可以重拾信心。</li>
+                            <li><strong>婚礼致辞：</strong> 借用经典语录作为开场白或结尾，增加仪式感。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-image">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="#d63384" stroke-width="1.5">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">这些话语适合在什么场合使用？</div>
+                <div class="faq-answer">
+                    <p>这些话语广泛适用于生日祝福、纪念日、婚礼致辞、道歉信、毕业赠言以及日常的自我激励。根据具体场景选择合适的语录，效果更佳。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获取更多感人的话语？</div>
+                <div class="faq-answer">
+                    <p>您可以关注本站更新，或通过分类标签浏览不同主题的语录。我们也会定期收录电影、书籍和名人名言中的经典语句。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">这些内容是否有版权问题？</div>
+                <div class="faq-answer">
+                    <p>本站收录的内容多为经典名著、名言警句或公共领域的作品。如果您有版权方面的疑问，请联系我们处理。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">
+                        我们致力于收集和分享最真挚、最感人的话语，为每一个需要情感慰藉的灵魂提供温暖的港湾。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#categories">分类目录</a></li>
+                        <li><a href="#quotes">最新语录</a></li>
+                        <li><a href="#guide">使用指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">文学经典</a></li>
+                        <li><a href="#">情感社区</a></li>
+                        <li><a href="#">心理咨询</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 感动的言语. All rights reserved. 仅供交流与学习使用.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
