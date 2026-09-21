@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="糖尿病护理指南 - 提供专业的糖尿病日常护理、饮食管理、运动建议、血糖监测及并发症预防知识，帮助糖友科学控糖，提升生活质量。">
+    <meta name="keywords" content="糖尿病护理,糖尿病饮食,血糖监测,糖尿病并发症,控糖指南">
+    <title>糖尿病护理-科学控糖与日常健康管理指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-light: #E8F5E9;
+            --secondary-color: #00897B;
+            --accent-color: #FF6F00;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #F9FAFB;
+            --bg-card: #FFFFFF;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(46, 125, 50, 0.39);
+        }
+
+        .btn-primary:hover {
+            background-color: #1B5E20;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #E0F2F1 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Core Pillars Grid */
+        .pillars {
+            padding: 80px 0;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-light);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Diet Section */
+        .diet-section {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .diet-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .diet-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .diet-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 3px;
+        }
+
+        /* Monitoring Section */
+        .monitoring {
+            padding: 80px 0;
+            background-color: var(--bg-body);
+        }
+
+        .monitoring-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .monitor-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .monitor-card h4 {
+            margin: 15px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .monitor-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Complication Prevention */
+        .complications {
+            padding: 80px 0;
+        }
+
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comp-table th, .comp-table td {
+            padding: 18px 24px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .comp-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .comp-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comp-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-body);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+            font-size: 1.5rem;
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #263238;
+            color: #eceff1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b0bec5;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #37474F;
+            color: #78909C;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .diet-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .diet-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span>糖友管家</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#pillars">护理核心</a>
+                <a href="#diet">饮食管理</a>
+                <a href="#monitoring">血糖监测</a>
+                <a href="#complications">并发症预防</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>科学糖尿病护理<br>守护您的健康生活</h1>
+                <p>专业的糖尿病护理指南，涵盖饮食控制、运动疗法、血糖监测及并发症预防，帮助您建立健康的生活方式。</p>
+                <div class="cta-group">
+                    <a href="#diet" class="btn btn-primary">开始护理计划</a>
+                    <a href="#monitoring" class="btn btn-outline">查看监测指南</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>1.2亿+</h3>
+                        <p>中国糖尿病患者</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>50%</h3>
+                        <p>并发症预防率</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>专业健康支持</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Pillars -->
+        <section id="pillars" class="pillars">
+            <div class="container">
+                <div class="section-title">
+                    <h2>糖尿病护理四大支柱</h2>
+                    <p>良好的护理是控制血糖、预防并发症的关键</p>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <h3>饮食控制</h3>
+                        <p>合理分配碳水化合物、蛋白质和脂肪摄入，控制总热量，避免血糖剧烈波动。</p>
+                        <a href="#diet" class="card-link">查看饮食建议 →</a>
+                    </article>
+                    <article class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                        </div>
+                        <h3>规律运动</h3>
+                        <p>每周至少150分钟中等强度有氧运动，配合力量训练，提高胰岛素敏感性。</p>
+                        <a href="#monitoring" class="card-link">了解运动指南 →</a>
+                    </article>
+                    <article class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3>血糖监测</h3>
+                        <p>定期监测空腹及餐后血糖，记录数据，为医生调整治疗方案提供依据。</p>
+                        <a href="#monitoring" class="card-link">掌握监测技巧 →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diet Section -->
+        <section id="diet" class="diet-section">
+            <div class="container diet-layout">
+                <div class="diet-text">
+                    <h2>科学饮食：控糖的基石</h2>
+                    <p style="margin-bottom: 20px;">糖尿病饮食不仅仅是“少吃”，而是“会吃”。核心原则是控制总热量，均衡营养。</p>
+                    <ul class="diet-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>低升糖指数（GI）食物</strong>
+                                <p style="font-size: 0.9rem; color: #666;">优先选择全谷物、杂豆、绿叶蔬菜，避免精米白面及甜食。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>定时定量</strong>
+                                <p style="font-size: 0.9rem; color: #666;">少食多餐，每餐七分饱，避免饥饱不均导致血糖波动。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>足量饮水</strong>
+                                <p style="font-size: 0.9rem; color: #666;">每天饮用1500-1700ml水，促进代谢，避免含糖饮料。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <div>
+                                <strong>脂肪摄入</strong>
+                                <p style="font-size: 0.9rem; color: #666;">减少饱和脂肪和反式脂肪，多用橄榄油、鱼油等健康油脂。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="diet-image">
+                    <img src="https://picsum.photos/seed/diabetesfood/600/400" alt="健康糖尿病饮食搭配" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Monitoring Section -->
+        <section id="monitoring" class="monitoring">
+            <div class="container">
+                <div class="section-title">
+                    <h2>血糖监测指南</h2>
+                    <p>了解不同时间点的血糖标准，掌握自我管理技能</p>
+                </div>
+                <div class="monitoring-grid">
+                    <div class="monitor-card">
+                        <h4>空腹血糖</h4>
+                        <p>正常范围：3.9-6.1 mmol/L<br>目标：4.4-7.0 mmol/L</p>
+                    </div>
+                    <div class="monitor-card">
+                        <h4>餐后2小时血糖</h4>
+                        <p>正常范围：< 7.8 mmol/L<br>目标：< 10.0 mmol/L</p>
+                    </div>
+                    <div class="monitor-card">
+                        <h4>糖化血红蛋白</h4>
+                        <p>反映过去2-3个月平均血糖<br>目标：< 7.0%</p>
+                    </div>
+                    <div class="monitor-card">
+                        <h4>随机血糖</h4>
+                        <p>任何时间测量<br>目标：< 11.1 mmol/L</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Complications -->
+        <section id="complications" class="complications">
+            <div class="container">
+                <div class="section-title">
+                    <h2>预防糖尿病并发症</h2>
+                    <p>早期筛查与干预是避免严重后果的关键</p>
+                </div>
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>并发症类型</th>
+                            <th>常见症状</th>
+                            <th>预防措施</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>糖尿病足</strong></td>
+                            <td>足部麻木、疼痛、伤口久治不愈</td>
+                            <td>每日检查足部，保持清洁干燥，选择合适的鞋袜，戒烟</td>
+                        </tr>
+                        <tr>
+                            <td><strong>视网膜病变</strong></td>
+                            <td>视力模糊、眼前有黑影</td>
+                            <td>每年进行眼底检查，控制血压血脂，避免剧烈运动</td>
+                        </tr>
+                        <tr>
+                            <td><strong>心血管疾病</strong></td>
+                            <td>胸闷、心悸、气短</td>
+                            <td>低盐低脂饮食，规律运动，定期监测血压和血脂</td>
+                        </tr>
+                        <tr>
+                            <td><strong>肾病</strong></td>
+                            <td>水肿、尿液泡沫增多</td>
+                            <td>严格控制血糖和血压，限制蛋白质摄入</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>解答您在糖尿病护理中遇到的疑惑</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">糖尿病患者可以吃水果吗？</div>
+                        <div class="faq-answer">可以，但要选择低糖水果（如苹果、梨、草莓），在两餐之间食用，并控制量，避免餐后立即吃。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">出现低血糖怎么办？</div>
+                        <div class="faq-answer">立即食用15g快速升糖食物（如葡萄糖片、糖果、果汁），15分钟后复测血糖，若未恢复再重复。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">运动时需要注意什么？</div>
+                        <div class="faq-answer">避免空腹运动，随身携带糖块以防低血糖。避免剧烈无氧运动，建议选择快走、慢跑、游泳等有氧运动。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">打胰岛素会成瘾吗？</div>
+                        <div class="faq-answer">不会。胰岛素是人体内必需的激素，注射胰岛素是模拟人体正常的生理分泌，有助于保护胰岛功能。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #b0bec5; font-size: 0.9rem;">糖友管家致力于提供科学、权威、易懂的糖尿病护理知识，帮助每一位糖友建立健康的生活方式。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#pillars">护理核心</a></li>
+                        <li><a href="#diet">饮食推荐</a></li>
+                        <li><a href="#monitoring">血糖标准</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>重要提醒</h4>
+                    <ul>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">医疗咨询</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 糖友管家. 仅供科普参考，具体诊疗请遵医嘱。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                const isActive = parent.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    child.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+                                                                                                                                 </html>
